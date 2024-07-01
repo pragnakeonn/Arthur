@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot name="laser_sensor" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:arg name="use_nominal_extrinsics" default="true"/>
+  <xacro:arg name="add_plug" default="false" />
+  <xacro:arg name="use_mesh" default="true" />
+  <xacro:include filename="$(find irobot_create_description)/urdf/sensors/lidar.urdf.xacro" />
+  <!-- Gazebo version -->
+  <xacro:arg name="gazebo"                       default="classic" />
+
+  <!-- Namespace -->
+  <xacro:arg name="namespace"                    default=""/>
+  <xacro:macro name="test_sensor_lidar">
+
+    <xacro:lidar_sensor name="center" gazebo="$(arg gazebo)" namespace="$(arg namespace)">
+      <origin xyz="0 0 0.2" rpy="0 0 0"/>
+    </xacro:lidar_sensor>
+  </xacro:macro>
+</robot>

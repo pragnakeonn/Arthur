@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<robot name="lidar_sensor" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+    <xacro:include filename="$(find irobot_create_description)/urdf/common_properties.urdf.xacro"/>
+    <xacro:macro name="lidar_sensor" params="name gazebo namespace parent:= base_link
+                       update_rate:=50.0 fov:=${60*deg2rad}
+                       min_range:=${10*mm2m} max_range:=${12*mm2m}
+                       visualize:=false *origin" >
+        <xacro:property name="link_name" value="lidar_sensor_${name}"/>
+
+        <joint name="${link_name}_joint" type="fixed">
+            <xacro:insert_block name="origin"/>
+            <parent link="${parent}"/>
+            <child link="${link_name}"/>
+            <!--<pose>-0.032 0 0.171 0 0 0</pose>
+            <axis>
+                <xyz>0 0 1</xyz>
+            </axis>-->
+        </joint>
+
+        <link name="${link_name}">
+            <visual>
+                <geometry>
+                    <cylinder radius="0.05" length="0.04"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder radius="0.05" length="0.04"/>
+                </geometry>
+            </collision>
+            <xacro:inertial_cylinder mass="0.01" length="0.04" radius="0.05">
+            </xacro:inertial_cylinder>
+        </link>
+
+        <gazebo reference="${link_name}_joint">
+            <preserveFixedJoint>true</preserveFixedJoint>
+        </gazebo>
+        <gazebo reference="${link_name}">
+            <material>Gazebo/Black</material>
+            <xacro:lidar_sensor_common sensor_name="${link_name}" gazebo="${gazebo}" 
+                update_rate="${update_rate}" visualize="${visualize}" 
+                h_samples="5" h_res="0.80" h_min_angle="-${fov/2}" h_max_angle="${fov/2}"
+                v_samples="5" v_res="0.80" v_min_angle="-${fov/2}" v_max_angle="${fov/2}" 
+                r_min="${min_range}" r_max="${max_range}" r_res="1.0">
+                <plugin name="lidar_controller" filename="libgazebo_ros_ray_sensor.so">
+                    <ros>
+                        <!--<argument>~/out:=scan</argument>-->
+                        <remapping>~/out:=scan</remapping>
+                    </ros>
+                    <output_type>sensor_msgs/LaserScan</output_type>
+                    <frame_name>${link_name}</frame_name>
+                </plugin>
+            </xacro:lidar_sensor_common>
+        </gazebo>
+    </xacro:macro>
+</robot>
+
+
+

@@ -1,0 +1,7 @@
+# An example of a scan service.
+# This can be used for testing but a semantically meaningful
+# one should be created to be built upon.
+std_msgs/Float64MultiArray pose
+---
+std_msgs/Float64MultiArray nextpose
+bool success

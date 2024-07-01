@@ -1,0 +1,9 @@
+# package: keonn_location
+
+string mission_id           #mission id as it appears in the sqlite db
+string[] sections           #list of ids of the sections to do
+string format               #Format of the output json: keonn (fixture based), nofixture, decathlon (epc based)
+---
+string result               #json with the result of the action
+---
+string status               #message with the current status

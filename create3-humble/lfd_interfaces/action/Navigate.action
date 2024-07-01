@@ -1,0 +1,10 @@
+#package: wp_navigation
+string section_id
+bool reversed
+bool go_final
+bool undock
+bool dock
+---
+bool success
+---
+int32 percentage_completed

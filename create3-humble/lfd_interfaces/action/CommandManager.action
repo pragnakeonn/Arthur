@@ -1,0 +1,6 @@
+#package: keonn_navigation
+string command
+float32[] params
+---
+bool result
+---

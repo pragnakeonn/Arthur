@@ -1,0 +1,7 @@
+#package: waypoints_generator
+
+string waypoint_file_name
+---
+bool result
+---
+string waypoints_saved

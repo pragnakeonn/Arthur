@@ -1,0 +1,7 @@
+#package: map_drawer
+
+string map_name
+bool waypoints
+---
+bool result
+---

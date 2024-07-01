@@ -1,0 +1,21 @@
+55:20 robin-50-1 user.notice network_manager:    PRODUCT         : create3
+May 30 10:55:20 robin-50-1 user.notice network_manager:    SERIAL          : e17628
+May 30 10:55:20 robin-50-1 user.notice network_manager:    CLEAN MODE      : normal
+May 30 10:55:20 robin-50-1 user.notice network_manager:    CONNS SVC MODE  : normal
+May 30 10:55:20 robin-50-1 user.notice network_manager:    AP RADIO        : wlan1/g/6/[SHORT-GI-20][GF]/Create-6715/US
+May 30 10:55:20 robin-50-1 user.notice network_manager:    AP IP ADDR      : 192.168.10.1
+May 30 10:55:20 robin-50-1 user.notice network_manager:    CL IP           : dhcp/#/#/#
+May 30 10:55:20 robin-50-1 user.notice network_manager:    CL DNS          : #/#/#
+May 30 10:55:20 robin-50-1 user.notice network_manager:    CL DHCPCD T/O   : 3
+May 30 10:55:20 robin-50-1 user.notice network_manager:    CL REG DOMAIN   : ETSI
+May 30 10:55:20 robin-50-1 user.notice network_manager:    ETH0 IP         : static/192.168.186.2
+May 30 10:55:20 robin-50-1 user.notice network_manager:    USB0 IP         : 192.168.186.2/192.168.187.2/192.168.186.3
+May 30 10:55:20 robin-50-1 user.notice network_manager:    SYSTEM_ACCESS   : locked
+May 30 10:55:20 robin-50-1 user.notice network_manager:    DEVELOPMENT MODE: disabled
+May 30 10:55:20 robin-50-1 user.notice network_manager:    RADIO_LIST      : wlan0 wlan1
+May 30 10:55:20 robin-50-1 user.notice network_manager:    HOSTNAME        : robin-50-1
+May 30 10:55:20 robin-50-1 user.notice network_manager:    ROBOT ID        : 67156DF1704D4E7E9DC20F14DD0157A6
+May 30 10:55:20 robin-50-1 user.notice network_manager:    BOOT COUNT      : 141
+May 30 10:55:20 robin-50-1 user.notice network_manager:    LANGUAGE PACK   : unknown
+May 30 10:55:20 robin-50-1 user.notice network_manager:    EXTRA LANGUAGE  : not_installed
+May 30 10:55:20 robin-50-1 daemon.notice network[1464]: [INFO] (src/gateway_pinger.c:121) wifi is disconnected
